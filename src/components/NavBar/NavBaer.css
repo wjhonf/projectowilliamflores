@@ -1,0 +1,13 @@
+.bg-body-tertiary {
+    background-color: #01427c !important;
+}
+.navbar a.nav-link {
+    color: white;
+}
+.navbar-brand {
+    color: white; 
+}
+.navbar .nav-link.dropdown-toggle {
+    color: white; 
+
+}
