@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/proyectowilliamfloresreact/static/css/main.18e3c56c.css",
+    "main.js": "/proyectowilliamfloresreact/static/js/main.1df6139c.js",
+    "static/js/787.8a2764ef.chunk.js": "/proyectowilliamfloresreact/static/js/787.8a2764ef.chunk.js",
+    "index.html": "/proyectowilliamfloresreact/index.html",
+    "main.18e3c56c.css.map": "/proyectowilliamfloresreact/static/css/main.18e3c56c.css.map",
+    "main.1df6139c.js.map": "/proyectowilliamfloresreact/static/js/main.1df6139c.js.map",
+    "787.8a2764ef.chunk.js.map": "/proyectowilliamfloresreact/static/js/787.8a2764ef.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18e3c56c.css",
+    "static/js/main.1df6139c.js"
+  ]
+}
