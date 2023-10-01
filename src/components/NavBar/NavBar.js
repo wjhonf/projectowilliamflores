@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,15 +10,15 @@ function NavBar() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">WJ Servicio Tecnológicos</Navbar.Brand>
+      <Navbar.Brand>
+          <Link to="/" className="nav-link">WJ Servicio Tecnológicos</Link>
+        </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
-            <Nav.Link href="#home">Inicio</Nav.Link>
-            <Nav.Link href="#link">Equipos</Nav.Link>
-            <NavDropdown title="Promociones" id="basic-nav-dropdown">
-              <NavDropdown.Item href="#action/3.1">Productos mas vendidos</NavDropdown.Item>
-            </NavDropdown>
+            <Link to={"/"} className="nav-link">Inicio</Link>
+            <Link to={"/category/1"} className="nav-link">PCs</Link>
+            <Link to={"/category/2"} className="nav-link">Impresoras</Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
