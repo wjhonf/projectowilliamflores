@@ -1,0 +1,45 @@
+
+[
+  {
+    "id": 1,
+    "nombre": "Laptop",
+    "precio": 1000,
+    "imagenEquipo": "../img/laptop.jpg",
+    "CatEquipo":1
+  },
+  {
+    "id": 2,
+    "nombre": "PC",
+    "precio": 1500,
+    "imagenEquipo": "../img/pc.jpg",
+    "CatEquipo":1
+  },
+  {
+    "id": 3,
+    "nombre": "Impresora",
+    "precio": 700,
+    "imagenEquipo": "../img/impresora.jpg",
+    "CatEquipo":2
+  },
+  {
+    "id": 4,
+    "nombre": "Impresora",
+    "precio": 1000,
+    "imagenEquipo": "../img/equipo2.jpg",
+    "CatEquipo":2
+  },
+  {
+    "id": 5,
+    "nombre": "PC",
+    "precio": 1500,
+    "imagenEquipo": "../img/equipo1.jpg",
+    "CatEquipo":1
+  },
+  {
+    "id": 6,
+    "nombre": "Laptop",
+    "precio": 700,
+    "imagenEquipo": "../img/equipo3.jpg",
+    "CatEquipo":1
+  }
+]
