@@ -5,11 +5,11 @@ function ItemListContainer() {
   const { categoryId } = useParams();
   const [equipos, setEquipos] = useState([]);
   const [equiposFiltrados, setEquiposFiltrados] = useState([]);
-
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("../equipos.json");
+        const response = await fetch("/equipos.json");
+        console.log(response);
         const data = await response.json();
         setEquipos(data);
       } catch (e) {

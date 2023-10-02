@@ -2,7 +2,6 @@
   "name": "projectowilliamflores",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://wjhonf.github.io/proyectowilliamfloresreact/build",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.2",
     "@fortawesome/free-solid-svg-icons": "^6.4.2",
@@ -18,10 +17,7 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4"
   },
-  
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
