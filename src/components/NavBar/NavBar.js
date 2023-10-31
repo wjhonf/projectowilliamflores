@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 import CartWidget from '../CartWidget/CartWidget';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './NavBaer.css'
@@ -20,9 +19,11 @@ function NavBar() {
             <Link to={"/category/1"} className="nav-link">PCs</Link>
             <Link to={"/category/2"} className="nav-link">Impresoras</Link>
           </Nav>
+          
         </Navbar.Collapse>
+        <CartWidget/>
       </Container>
-      <CartWidget/>
+      
     </Navbar>
   );
 }

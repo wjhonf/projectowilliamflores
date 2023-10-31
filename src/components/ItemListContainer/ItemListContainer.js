@@ -1,34 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import { useParams, Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
+import { getFirestore, collection, query, getDocs, where } from 'firebase/firestore';
 
 function ItemListContainer() {
   const { categoryId } = useParams();
-  const [equipos, setEquipos] = useState([]);
   const [equiposFiltrados, setEquiposFiltrados] = useState([]);
+
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("/equipos.json");
-        console.log(response);
-        const data = await response.json();
-        setEquipos(data);
+        const db = getFirestore();
+        const equiposCollection = collection(db, 'equipos');
+        let equiposQuery = equiposCollection;
+
+        if (categoryId) {
+          const categoriaFilter = where('CatEquipo', '==', parseInt(categoryId));
+          equiposQuery = query(equiposCollection, categoriaFilter);
+        }
+
+        const equiposSnapshot = await getDocs(equiposQuery);
+        const filteredEquipos = equiposSnapshot.docs.map((doc) => doc.data());
+        setEquiposFiltrados(filteredEquipos);
       } catch (e) {
         console.log('Error al cargar los equipos:', e);
       }
     };
+
     fetchData();
   }, [categoryId]);
-  const filtrarEquiposPorCategoria = (categoryId) => {
-    if (categoryId) {
-      const filtrados = equipos.filter((equipo) => equipo.CatEquipo === parseInt(categoryId));
-      setEquiposFiltrados(filtrados);
-    } else {
-      setEquiposFiltrados(equipos);
-    }
-  };
-  useEffect(() => {
-    filtrarEquiposPorCategoria(categoryId);
-  }, [categoryId, equipos]);
+
   return (
     <div>
       <div className="container">
@@ -37,10 +37,17 @@ function ItemListContainer() {
           {equiposFiltrados.map((equipo) => (
             <div key={equipo.id} className="col-md-4 mb-3">
               <div className="card">
-                <img src={equipo.imagenEquipo} className="card-img-top" alt={equipo.nombre} style={{ maxWidth: '20%', maxHeight: '20%' }}/>
+                <img
+                  src={equipo.imagenEquipo}
+                  className="card-img-top"
+                  alt={equipo.nombre}
+                  style={{ maxWidth: '20%', maxHeight: '20%' }}
+                />
                 <div className="card-body">
                   <h5 className="card-title">{equipo.nombre}</h5>
-                  <Link to={`/item/${equipo.id}`} className="btn btn-success btn-sm">Ver Caracteristicas</Link>
+                  <Link to={`/item/${equipo.id}`} className="btn btn-success btn-sm">
+                    Ver Caracteristicas
+                  </Link>
                 </div>
               </div>
             </div>
@@ -50,4 +57,5 @@ function ItemListContainer() {
     </div>
   );
 }
+
 export default ItemListContainer;
